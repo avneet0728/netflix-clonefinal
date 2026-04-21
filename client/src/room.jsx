@@ -4,7 +4,10 @@ import { io } from "socket.io-client";
 import YouTube from "react-youtube";
 
 // Create socket ONCE outside component so it's never recreated
-const socket = io("http://localhost:5002", { autoConnect: false });
+const socket = io("https://netflix-clonefinal.onrender.com", {
+  autoConnect: false,
+  transports: ["websocket"]
+});
 
 export default function Room() {
   const { roomId }   = useParams();
