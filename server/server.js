@@ -15,9 +15,8 @@ app.use(express.json());
 
 // ─── MongoDB connection ───────────────────────────────────────────────────────
 
-const MONGO_URI = "mongodb+srv://netflixuser:netflix123@cluster0.9lhcg2m.mongodb.net/?appName=Cluster";
-const JWT_SECRET = process.env.JWT_SECRET || "netflix_super_secret_key_2024";
-
+const MONGO_URI = process.env.MONGO_URI;
+const JWT_SECRET = process.env.JWT_SECRET;
 mongoose.connect(MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB error:", err.message));
